@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: cocktails_development
+  pool: 5
+  username: cocktails
+  password: pass
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: cocktails_test
+  pool: 5
+  username: cocktails
+  password: pass

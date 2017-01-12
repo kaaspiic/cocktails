@@ -1,0 +1,2 @@
+class PreparationStep < ApplicationRecord
+end
