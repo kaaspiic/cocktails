@@ -1,5 +1,9 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable
 
-  validates :password, :email, presence: true
+  validates :email, presence: true
+
+  def favorites
+    Drink.where(id: super)
+  end
 end
