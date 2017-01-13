@@ -47,5 +47,5 @@ Temporary Items
 .apdisk
 
 .orig
+/log/*
 /tmp
-/log
