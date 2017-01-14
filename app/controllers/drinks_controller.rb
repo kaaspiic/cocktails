@@ -20,7 +20,6 @@ class DrinksController < ApplicationController
     end
   end
 
-
   def update
     if @drink.update(drink_params)
       redirect_to drink_path @drink
@@ -37,7 +36,9 @@ class DrinksController < ApplicationController
   private
 
   def drink_params
-    params.require(:drink).permit(:name, :description, :alcoholic, :strength, ingredients: [])
+    params.require(:drink).permit(:name, :description, :alcoholic, :strength, ingredients: [],
+      preparation_steps_attributes: [:id, :drink_id, :title, :description, :time_needed, :_destroy]
+    )
   end
 
   def load_drink
@@ -45,8 +46,10 @@ class DrinksController < ApplicationController
   end
 
   def check_write_permissions
+    return if current_user == @drink.user
     flash.alert = t('.no_write_permissions')
-    redirect_to(drink_path @drink) unless current_user == @drink.user
+    redirect_to(drink_path @drink)
   end
 end
+
 

@@ -15,3 +15,15 @@
 //= require bootstrap
 //= require material-design-lite
 //= require_tree .
+
+Cocktails = {
+  load: () => {
+    $('[data-component]').each((_index, el) => {
+      var className = $(el).attr('data-component')
+
+      if (Cocktails[className]) new Cocktails[className](el)
+    })
+  }
+}
+
+$( document ).ready(() => { Cocktails.load() })

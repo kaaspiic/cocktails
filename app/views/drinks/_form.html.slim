@@ -1,7 +1,18 @@
-= simple_form_for drink do |f|
+= simple_form_for drink, html: { data: { component: 'PreparationSteps' } } do |f|
   = f.input :name
   = f.input :strength
   = f.input :description
   = f.input :alcoholic
+
+  span data-action='add'
+    | Add
+  = f.simple_fields_for :preparation_steps do |ff|
+    .drink-preparation-step
+      span data-action='remove'
+        | Remove
+      = ff.hidden_field :_destroy
+      = ff.input :title
+      = ff.input :description
+      = ff.input :time_needed
 
   = f.submit
