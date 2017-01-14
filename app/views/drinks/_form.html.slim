@@ -1,6 +1,7 @@
 = simple_form_for drink, html: { data: { component: 'PreparationSteps' } } do |f|
+  = f.input :ingredients, as: :select, input_html: { multiple: true, allowCreate: true, data: { component: 'Select2' } }, collection: ingredient_collection
   = f.input :name
-  = f.input :strength
+  = f.input :strength, as: :score
   = f.input :description
   = f.input :alcoholic
 
