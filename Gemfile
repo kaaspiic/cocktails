@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '~> 5.0.1'
 gem 'pg'
@@ -22,7 +22,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-source 'https://rails-assets.org' do
+source 'https://insecure.rails-assets.org' do
   gem 'rails-assets-tether'
   gem 'rails-assets-bootstrap', '4.0.0.alpha.2'
   gem 'rails-assets-select2'
@@ -30,3 +30,4 @@ source 'https://rails-assets.org' do
 end
 
 gem 'rubocop', require: false
+gem 'tzinfo-data'
