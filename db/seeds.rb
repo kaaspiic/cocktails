@@ -1,5 +1,5 @@
-  seeder = User.find_by(email: 'seeder@example.com')
-  unless seeder && seeder.drinks.any?
+seeder = User.find_by(email: 'seeder@example.com')
+unless seeder && seeder.drinks.any?
   seeder = User.create(email: 'seeder@example.com')
 
   seeder.drinks.build(
