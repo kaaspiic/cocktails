@@ -22,7 +22,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-source 'https://rails-assets.org' do
+source 'http://insecure.rails-assets.org' do
   gem 'rails-assets-tether'
   gem 'rails-assets-bootstrap', '4.0.0.alpha.2'
   gem 'rails-assets-select2'
