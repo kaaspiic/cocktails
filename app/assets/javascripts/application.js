@@ -14,14 +14,16 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require material-design-lite
+//= require select2
 //= require_tree .
 
 Cocktails = {
   load: () => {
     $('[data-component]').each((_index, el) => {
-      var className = $(el).attr('data-component')
+      var $el = $(el)
+      var className = $el.attr('data-component')
 
-      if (Cocktails[className]) new Cocktails[className](el)
+      if (Cocktails[className]) new Cocktails[className]($el)
     })
   }
 }

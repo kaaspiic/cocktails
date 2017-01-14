@@ -10,6 +10,10 @@ class DrinksGrid
   filter :alcoholic, :boolean
   filter :strength
 
-  column :name
+  column :name do |drink|
+    format drink do
+      link_to drink, drink_path(drink)
+    end
+  end
   column :description
 end

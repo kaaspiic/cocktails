@@ -8,6 +8,10 @@ class Drink < ApplicationRecord
 
   validates :name, :description, presence: true
 
+  def ingredients=(ingredients)
+    super(ingredients.reject &:blank?)
+  end
+
   def to_s
     name
   end
