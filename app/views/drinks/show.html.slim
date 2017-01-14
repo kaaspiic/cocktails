@@ -1,3 +1,9 @@
 - if @drink.user == current_user
   = link_to t('.destroy'), drink_path(@drink), method: :delete
   = link_to t('.edit'), edit_drink_path(@drink)
+
+
+.drink-comments
+  = render 'comments', drink: @drink
+
+.drink-ratings

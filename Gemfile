@@ -14,7 +14,9 @@ gem 'simple_form'
 gem 'pry-rails'
 gem 'datagrid'
 gem 'rails-i18n'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
+gem 'js-routes'
+gem 'i18n-js'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

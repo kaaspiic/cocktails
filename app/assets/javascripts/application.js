@@ -15,11 +15,15 @@
 //= require bootstrap
 //= require material-design-lite
 //= require select2
+//= require js-routes
+//= require i18n
+//= require i18n/translations
 //= require_tree .
 
+
 Cocktails = {
-  load: () => {
-    $('[data-component]').each((_index, el) => {
+  load: ($container = $(document)) => {
+    $container.find('[data-component]').each((_index, el) => {
       var $el = $(el)
       var className = $el.attr('data-component')
 
@@ -28,4 +32,7 @@ Cocktails = {
   }
 }
 
-$( document ).ready(() => { Cocktails.load() })
+$(document).ready(() => {
+  I18n.locale = $('head').attr('locale') || 'lv'
+  Cocktails.load()
+})
