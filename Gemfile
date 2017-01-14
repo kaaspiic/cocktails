@@ -30,3 +30,4 @@ source 'https://rails-assets.org' do
 end
 
 gem 'rubocop', require: false
+gem 'tzinfo-data'
