@@ -20,7 +20,34 @@ lv:
         alcoholic: Satur alkoholu
         description: Apraksts
         strength: Stiprums
+        user_id: Izveidoja
         user: Izveidoja
+        created_at: Izveidots
+        updated_at: Labots
+      comment:
+        drink_id: Dzēriens
+        drink: Dzēriens
+        user_id: Autors
+        user: Autors
+        text: Teksts
+        created_at: Izveidots
+        updated_at: Labots
+      preparation_step:
+        drink_id: Dzēriens
+        drink: Dzēriens
+        title: Nosaukums
+        description: Apraksts
+        time_needed: Pagatavošanas laiks
+        created_at: Izveidots
+        updated_at: Labots
+      rating:
+        drink_id: Dzēriens
+        drink: Dzēriens
+        user_id: Autors
+        user: Autors
+        score: Vērtējums
+        created_at: Vērtēts
+        updated_at: Labots
 
   drinks:
     no_write_permissions: Jums nav tiesību labot šo recepti!
