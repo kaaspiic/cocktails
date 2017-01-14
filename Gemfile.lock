@@ -1,6 +1,6 @@
 GEM
   remote: https://rubygems.org/
-  remote: http://insecure.rails-assets.org/
+  remote: https://rails-assets.org/
   specs:
     actioncable (5.0.1)
       actionpack (= 5.0.1)
@@ -42,7 +42,6 @@ GEM
     arel (7.1.4)
     ast (2.3.0)
     bcrypt (3.1.11)
-    bcrypt (3.1.11-x86-mingw32)
     builder (3.2.2)
     coderay (1.1.1)
     coffee-rails (4.2.1)
@@ -65,7 +64,6 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.14)
-    ffi (1.9.14-x86-mingw32)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -93,13 +91,10 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
-    nokogiri (1.7.0.1-x86-mingw32)
-      mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
     parser (2.3.3.1)
       ast (~> 2.2)
     pg (0.19.0)
-    pg (0.19.0-x86-mingw32)
     powerpack (0.1.1)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -211,7 +206,6 @@ GEM
 
 PLATFORMS
   ruby
-  x86-mingw32
 
 DEPENDENCIES
   coffee-rails (~> 4.2)
