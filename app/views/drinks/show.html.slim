@@ -1,0 +1,3 @@
+- if @drink.user == current_user
+  = link_to 'Dzēst recepti', drink_path(@drink), method: :delete
+  = link_to 'Labot recepti', edit_drink_path(@drink)
