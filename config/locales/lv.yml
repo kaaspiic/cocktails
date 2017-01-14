@@ -37,7 +37,7 @@ lv:
         drink: Dzēriens
         title: Nosaukums
         description: Apraksts
-        time_needed: Pagatavošanas laiks
+        time_needed: Paredzētais laiks
         created_at: Izveidots
         updated_at: Labots
       rating:
