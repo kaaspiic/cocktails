@@ -1,7 +1,7 @@
-en:
+lv:
   simple_form:
-    "yes": 'Yes'
-    "no": 'No'
+    "yes": Jā
+    "no": Nē
     required:
       text: 'required'
       html: ''

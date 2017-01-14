@@ -13,6 +13,7 @@ gem 'slim-rails'
 gem 'simple_form'
 gem 'pry-rails'
 gem 'datagrid'
+gem 'rails-i18n'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

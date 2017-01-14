@@ -45,7 +45,7 @@ class DrinksController < ApplicationController
   end
 
   def check_write_permissions
-    flash.alert = 'Jums nav tiesību labot šo recepti!'
+    flash.alert = t('.no_write_permissions')
     redirect_to(drink_path @drink) unless current_user == @drink.user
   end
 end

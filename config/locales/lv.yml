@@ -1,0 +1,39 @@
+lv:
+  activerecord:
+    models:
+      user: Lietotājs
+      drink: Recepte
+      comment: Komentārs
+      preparation_step: Pagatavošanas solis
+      rating: Vērtējums
+    attributes:
+      user:
+        email: E-pasts
+        first_name: Vārds
+        last_name: Uzvārds
+        age: Vecums
+        locale: Valoda
+        favorites: Mani dzērieni
+      drink:
+        name: Nosaukums
+        ingredients: Sastāvdaļas
+        alcoholic: Satur alkoholu
+        description: Apraksts
+        strength: Stiprums
+        user: Izveidoja
+
+  drinks:
+    no_write_permissions: Jums nav tiesību labot šo recepti!
+    index:
+      new_drink: Jauna recepte
+    show:
+      destroy: Dzēst recepti
+      edit: Labot recepti
+  dashboard:
+    show:
+      all_drinks: Visi dzērieni
+
+  datagrid:
+    form:
+      reset: Atcelt filtru
+      search: Meklēt
