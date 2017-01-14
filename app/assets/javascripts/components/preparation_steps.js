@@ -1,8 +1,8 @@
 //= require ./../application.js
 
 Cocktails.PreparationSteps = class PreparationSteps {
-  constructor(container) {
-    this.form = $(container)
+  constructor($form) {
+    this.form = $form
     this.delegateEvents()
   }
 
