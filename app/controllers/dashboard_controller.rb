@@ -4,8 +4,8 @@ class DashboardController < ApplicationController
       Drink.joins(:ratings)
            .group('drinks.id')
            .order('COUNT(drinks.id) DESC')
-           .limit(10) + Drink.last(10)
-    ).uniq.first 10
+           .limit(12) + Drink.last(12)
+    ).uniq.first 12
 
     @grid = DrinksGrid.new
   end
