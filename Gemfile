@@ -25,12 +25,12 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-source 'http://insecure.rails-assets.org' do
+source 'https://rails-assets.org' do
   gem 'rails-assets-tether'
   gem 'rails-assets-bootstrap', '4.0.0.alpha.2'
   gem 'rails-assets-select2'
   gem 'rails-assets-material-design-lite'
-	gem 'rails-assets-dialog-polyfill'
+  gem 'rails-assets-dialog-polyfill'
 end
 
 gem 'rubocop', require: false
