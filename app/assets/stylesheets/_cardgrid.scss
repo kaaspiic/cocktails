@@ -1,0 +1,37 @@
+.mdl-card {
+  
+}
+
+.demo-card-square {
+  width: 250px;
+  height: 400px;
+  padding-: 10px;
+  margin: 10px;
+}
+
+.mdl-card__actions {
+  text-align: center;
+ }
+ 
+h2 {
+  text-align: center;
+}
+
+.mdl-card__supporting-text {
+  width: 250px;
+  height: 100px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow-y: hidden;
+}
+
+.row {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mdl-card__title-text {
+ padding-bottom: 10px;
+}

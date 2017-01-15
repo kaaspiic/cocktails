@@ -30,6 +30,7 @@ source 'http://insecure.rails-assets.org' do
   gem 'rails-assets-bootstrap', '4.0.0.alpha.2'
   gem 'rails-assets-select2'
   gem 'rails-assets-material-design-lite'
+	gem 'rails-assets-dialog-polyfill'
 end
 
 gem 'rubocop', require: false
