@@ -26,6 +26,8 @@ lv:
         user: Izveidoja
         created_at: Izveidots
         updated_at: Labots
+        ratings_count: Vērtējumu skaits
+        rating: Vērtējums
       comment:
         drink_id: Dzēriens
         drink: Dzēriens
