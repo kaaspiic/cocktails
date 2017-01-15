@@ -1,2 +1,4 @@
 = datagrid_table @grid
-= link_to t('.new_drink'), new_drink_path
+
+- if current_user
+  = link_to t('.new_drink'), new_drink_path

@@ -1,4 +1,5 @@
 lv:
+  no_write_permissions: Jums nav tiesību veikt šo darbību!
   activerecord:
     models:
       user: Lietotājs
