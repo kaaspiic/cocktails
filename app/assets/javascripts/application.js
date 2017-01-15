@@ -30,8 +30,6 @@ Cocktails = {
 
       if (Cocktails[className]) new Cocktails[className]($el)
     })
-	
-    dialogPolyfill.registerDialog(dialog)
   }
 }
 
