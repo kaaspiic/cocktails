@@ -20,7 +20,6 @@ lv:
       drink:
         name: Nosaukums
         ingredients: Sastāvdaļas
-        alcoholic: Satur alkoholu
         description: Apraksts
         strength: Stiprums
         user_id: Izveidoja
@@ -84,3 +83,16 @@ lv:
       reset: Atcelt filtru
       search: Meklēt
 
+  collections:
+    strengths:
+      1: Bezalkoholisks - 1
+      2: Vājš - 2
+      3: Vidējs - 3
+      4: Spēcīgs - 4
+      5: Bifeļu gāzējs - 5
+    rating_scores:
+      1: Galīgi garām!
+      2: Neiesaku
+      3: Vidēji
+      4: Labi
+      5: Izcili!

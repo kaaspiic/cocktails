@@ -9,7 +9,7 @@ class Drink < ApplicationRecord
   validates :name, :description, presence: true
 
   def ingredients=(ingredients)
-    super(ingredients.reject &:blank?)
+    super(ingredients.reject(&:blank?).map(&:downcase))
   end
 
   def average_rating
