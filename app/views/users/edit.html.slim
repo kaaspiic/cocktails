@@ -1,0 +1,16 @@
+= simple_form_for @user, html: { method: :patch } do |f|
+  .row
+    .col-sm-6
+      = f.input :email
+      = f.input :locale, as: :select, collection: available_locales, input_html: { data: { component: 'Select2' } }, include_blank: false
+      = f.input :current_password
+      = f.input :first_name
+      = f.input :last_name
+      = f.input :age, as: :integer
+
+    .col-sm-6
+      .password-update
+        = f.input :password
+        = f.input :password_confirmation
+
+  = f.button :submit, 'Update'
