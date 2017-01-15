@@ -35,6 +35,12 @@ class DrinksGrid
     input_html: { data: { component: 'Select2' } }
   )
 
+  column :picture, header: '', order: false do |drink|
+    format drink do
+      image_tag(drink_picture_path(drink.id), size: 120) if drink.picture
+    end
+  end
+
   column :name, header: Drink.human_attribute_name(:name) do |drink|
     format drink do
       link_to drink.to_s.capitalize, drink_path(drink)

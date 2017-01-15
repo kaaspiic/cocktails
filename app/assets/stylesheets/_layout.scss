@@ -1,0 +1,47 @@
+body {
+  font-size: 14px !important;
+}
+
+a {
+  color: #76323f;
+  font-weight: 600;
+}
+
+.main-container {
+  padding: 70px;
+  width: 70%;
+  margin-left: 15%;
+}
+
+.mdl-layout--fixed-header {
+  position: fixed;
+  z-index: 50;
+  top: 0px;
+  width: 100%;
+
+  .mdl-layout__header {
+    background-color: #3B3B40;
+  }
+
+  &.actionbar {
+    margin-top: 64px;
+    height: 50px;
+    min-height: 50px;
+
+    .mdl-layout__header {
+      height: 50px;
+      min-height: 50px;
+    }
+
+    .mdl-layout__header-row {
+      height: 50px;
+      min-height: 50px;
+      background-color: #f2f2f2;
+    }
+  }
+}
+
+ol.breadcrumb {
+  margin-top: 1rem;
+  background-color: #f2f2f2;
+}
