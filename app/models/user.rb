@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   validates :email, presence: true
   has_many :drinks
+
   def favorites
     Drink.where(id: super)
   end
