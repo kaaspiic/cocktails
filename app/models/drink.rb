@@ -12,6 +12,14 @@ class Drink < ApplicationRecord
     super(ingredients.reject &:blank?)
   end
 
+  def average_rating
+    if ratings.any?
+      ratings.pluck(:score).sum.to_d / ratings.count
+    else
+      0
+    end
+  end
+
   def to_s
     name
   end

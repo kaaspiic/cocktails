@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :users
   resources :drinks
   resources :comments, only: [:create, :update, :destroy]
+  resources :ratings, only: [:create, :update, :destroy]
 end

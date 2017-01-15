@@ -56,6 +56,10 @@ lv:
     show:
       destroy: Dzēst recepti
       edit: Labot recepti
+    ratings:
+      post: Pievienot vērtējumu
+      patch: Labot vērtējumu
+      average_rating: "%{count} vērtējumi, vidēji %{score}/5"
   dashboard:
     show:
       all_drinks: Visi dzērieni

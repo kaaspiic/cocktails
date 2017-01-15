@@ -1,0 +1,13 @@
+span.average-rating
+  = t('.average_rating', count: drink.ratings.count, score: drink.average_rating)
+
+- if rating = Rating.find_by(user_id: current_user.id, drink_id: drink.id)
+  - form_params = { url: rating_path(rating), method: :patch }
+- else
+  - form_params = { url: ratings_path, method: :post }
+
+= simple_form_for :rating, form_params.merge(html: { data: { remote: true, component: 'DrinkRating', drink: drink.id } }) do |f|
+  = f.hidden_field :drink_id, value: drink.id
+  = f.input :score, as: :score, value: drink.average_rating
+
+  = f.submit t(".#{form_params[:method]}"), hidden: true
