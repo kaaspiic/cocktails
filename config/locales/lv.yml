@@ -82,6 +82,10 @@ lv:
     form:
       reset: Atcelt filtru
       search: Meklēt
+    table:
+      order:
+        asc: ⬆
+        desc: ⬇
 
   collections:
     strengths:
