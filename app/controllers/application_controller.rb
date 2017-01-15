@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     if current_user
-      I18n.locale = current_user.locale || :lv
+      I18n.locale = current_user.locale.presence || :lv
     end
   end
 end

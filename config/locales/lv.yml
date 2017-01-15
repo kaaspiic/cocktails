@@ -14,6 +14,9 @@ lv:
         age: Vecums
         locale: Valoda
         favorites: Mani dzērieni
+        current_password: Esošā parole
+        password: Parole
+        password_confirmation: Paroles apstiprinājums
       drink:
         name: Nosaukums
         ingredients: Sastāvdaļas
@@ -48,6 +51,12 @@ lv:
         score: Vērtējums
         created_at: Vērtēts
         updated_at: Labots
+    errors:
+      models:
+        user:
+          attributes:
+            current_password:
+              incorrect: nav pareiza
 
   drinks:
     no_write_permissions: Jums nav tiesību labot šo recepti!
@@ -63,8 +72,15 @@ lv:
   dashboard:
     show:
       all_drinks: Visi dzērieni
+  users:
+    no_write_permissions: Jums nav tiesību labot šo lietotāju!
+    update:
+      incorrect_password: Profila iestatījumi netika atjaunoti, jo ievadītā parole nav pareiza!
+      user_save_unsuccessful: Profila iestatījumi netika atjaunoti!
+      user_save_successful: Profila iestatījumi veiksmīgi atjaunoti!
 
   datagrid:
     form:
       reset: Atcelt filtru
       search: Meklēt
+
