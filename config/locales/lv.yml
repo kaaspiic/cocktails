@@ -1,4 +1,5 @@
 lv:
+  no_write_permissions: Jums nav tiesību veikt šo darbību!
   activerecord:
     models:
       user: Lietotājs
@@ -26,6 +27,8 @@ lv:
         user: Izveidoja
         created_at: Izveidots
         updated_at: Labots
+        ratings_count: Vērtējumu skaits
+        rating: Vērtējums
       comment:
         drink_id: Dzēriens
         drink: Dzēriens
@@ -82,6 +85,10 @@ lv:
     form:
       reset: Atcelt filtru
       search: Meklēt
+    table:
+      order:
+        asc: ⬆
+        desc: ⬇
 
   collections:
     strengths:

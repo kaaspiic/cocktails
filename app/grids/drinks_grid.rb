@@ -35,10 +35,40 @@ class DrinksGrid
     input_html: { data: { component: 'Select2' } }
   )
 
-  column :name do |drink|
+  column :name, header: Drink.human_attribute_name(:name) do |drink|
     format drink do
-      link_to drink, drink_path(drink)
+      link_to drink.to_s.capitalize, drink_path(drink)
     end
   end
-  column :description
+
+  column :strength, header: Drink.human_attribute_name(:strength) do |drink|
+    I18n.t("collections.strengths")[drink.strength.to_i]
+  end
+
+  column :description, header: Drink.human_attribute_name(:description) do |drink|
+    format drink do
+      ActiveSupport::SafeBuffer.new.tap do |content|
+        content << content_tag(:span, drink.description.truncate(100), id: drink.id)
+        text = "<strong>#{drink.name.capitalize}</strong><br>#{drink.description}".html_safe
+        content << content_tag(:div, text, class: 'mdl-tooltip mdl-tooltip--large', for: drink.id)
+      end
+    end
+  end
+
+  column(
+    :rating,
+    header: Drink.human_attribute_name(:rating),
+    order: proc { |scope| scope.left_joins(:ratings).group(:id).order('AVG(ratings.score)') }
+  ) do |drink|
+    drink.average_rating
+  end
+
+  column(
+    :ratings_count,
+    header: Drink.human_attribute_name(:ratings_count),
+    order: proc { |scope| scope.left_joins(:ratings).group(:id).order('COUNT(drink_id)') }
+  ) do |drink|
+    drink.ratings.count
+  end
 end
+

@@ -1,4 +1,5 @@
 require 'bcrypt'
+
 class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update, :destroy]
   include BCrypt
