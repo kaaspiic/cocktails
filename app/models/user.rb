@@ -2,6 +2,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable
 
   validates :email, presence: true
+  has_many :drinks
 
   has_many :drinks
 

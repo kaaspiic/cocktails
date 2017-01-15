@@ -18,6 +18,7 @@
 //= require js-routes
 //= require i18n
 //= require i18n/translations
+//= require dialog-polyfill.js
 //= require_tree .
 
 
