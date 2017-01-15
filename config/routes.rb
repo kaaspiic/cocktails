@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :drinks
   resources :comments, only: [:create, :update, :destroy]
   resources :ratings, only: [:create, :update]
+
+  get 'drinks/:id/picture', to: 'drinks#picture', as:'drink_picture'
 end
