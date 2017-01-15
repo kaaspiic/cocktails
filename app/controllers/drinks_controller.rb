@@ -63,6 +63,12 @@ class DrinksController < ApplicationController
       path = File.dirname(Rails.root.join('public', 'uploads', @drink.id.to_s))
       FileUtils.mkdir_p path
       File.open("#{path}/#{@drink.id}.png", 'wb') { |file| file.write(picture.read) }
+
+      if params[:action] == 'create'
+        @drink.update(picture: picture.original_filename)
+      else
+        @drink.picture = picture.original_filename
+      end
     end
   end
 end

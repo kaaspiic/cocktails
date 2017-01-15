@@ -1,4 +1,10 @@
-= datagrid_table @grid
-
+= provide :breadcrumbs
+  = link_breadcrumb 'Sākums', root_path
+  = head_breadcrumb 'Receptes'
 - if current_user
-  = link_to t('.new_drink'), new_drink_path
+  = provide :actions
+    = link_to t('.new_drink'), new_drink_path, class: 'btn btn-outline-primary'
+
+.row
+  = datagrid_table @grid
+

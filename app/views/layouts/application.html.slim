@@ -7,9 +7,22 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
-    p.notice
-      = notice
-    p.alert
-      = alert
+    .mdl-layout--fixed-header
+      header.mdl-layout__header
+        .mdl-layout__header-row
+          span.mdl-layout-title Cocktail Recipes
+    .mdl-layout--fixed-header.actionbar.mdl-shadow--3dp
+      .mdl-layout__header
+        .mdl-layout__header-row
+          ol.breadcrumb
+            = yield :breadcrumbs
+          .mdl-layout-spacer
+          = yield :actions
 
-    = yield
+    . class="#{'main-container mdl-shadow--3dp' unless params[:action] == 'index'}"
+      p.notice
+        = notice
+      p.alert
+        = alert
+
+      = yield
