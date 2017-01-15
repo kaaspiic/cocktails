@@ -18,6 +18,7 @@ Cocktails.DrinkRating = class DrinkRating {
   updateRatings() {
     $('.drink-ratings').load(`${Routes.drink_path(this.form.attr('data-drink'))} .drink-ratings >`, () => {
       Cocktails.load($('.drink-ratings'))
+      componentHandler.upgradeDom()
     })
   }
 }

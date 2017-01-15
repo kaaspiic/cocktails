@@ -3,6 +3,7 @@ class ScoreInput < SimpleForm::Inputs::Base
 
   def input(wrapper_options)
     score = options[:value] || object.send(attribute_name)
+    translation_scope = I18n.t(options[:translation_scope])
 
     content_tag :div, data: { component: 'ScoreInput' } do
       ActiveSupport::SafeBuffer.new.tap do |content|
@@ -10,7 +11,14 @@ class ScoreInput < SimpleForm::Inputs::Base
 
         5.times do |i|
           css_class = score.to_i <= i ? 'fa fa-star-o' : 'fa fa-star'
-          content << content_tag(:i, '', class: css_class, data: { value: i + 1 })
+          title     = translation_scope[i + 1]
+          content << content_tag(
+            :i,
+            "<div class='mdl-tooltip' data-mdl-for=#{i}>#{title}</div>".html_safe,
+            id: i,
+            class: css_class,
+            data: { value: i + 1 }
+          )
         end
       end
     end
