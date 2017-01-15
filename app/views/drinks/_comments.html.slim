@@ -14,8 +14,10 @@
     - if comment.created_at != comment.updated_at
       .comment-edited
         = t('.comment_edited')
-hr
-= simple_form_for :comment, url: comments_path, method: :post, html: { data: data } do |f|
-  = f.hidden_field :drink_id, value: drink.id
-  = f.input :text, as: :text
-  = f.submit
+
+- if current_user
+  hr
+  = simple_form_for :comment, url: comments_path, method: :post, html: { data: data } do |f|
+    = f.hidden_field :drink_id, value: drink.id
+    = f.input :text, as: :text
+    = f.submit
