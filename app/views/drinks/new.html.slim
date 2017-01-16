@@ -1,1 +1,6 @@
+= provide :breadcrumbs
+  = link_breadcrumb t('breadcrumbs.root'), root_path
+  = link_breadcrumb t('breadcrumbs.drinks'), drinks_path
+  = head_breadcrumb t('breadcrumbs.new_drink')
+
 = render 'form', drink: @drink

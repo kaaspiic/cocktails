@@ -1,6 +1,7 @@
 = provide :breadcrumbs
-  = link_breadcrumb 'Sākums', root_path
-  = head_breadcrumb 'Receptes'
+  = link_breadcrumb t('breadcrumbs.root'), root_path
+  = head_breadcrumb t('breadcrumbs.drinks')
+
 - if current_user
   = provide :actions
     = link_to t('.new_drink'), new_drink_path, class: 'btn btn-outline-primary'

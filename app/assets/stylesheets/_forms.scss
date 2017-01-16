@@ -1,12 +1,15 @@
 label.control-label {
   float: right;
   margin-top: 6px;
+
+  &.file {
+    margin-top: 10px;
+  }
 }
 
 .help-block {
   color: #a94442;
   float: right;
-  margin-right: 15px;
 }
 
 .score i.fa {

@@ -35,6 +35,6 @@ Cocktails.Comments = class Comments {
   renderError() {
     this.form.find('textarea').attr('aria-invalid', true)
     if (!this.form.find('div.comment_text .help-block').length)
-      this.form.find('div.comment_text').append(`<span class='help-block'>${I18n.t('errors.messages.blank')}</span>`)
+      this.form.find('div.comment_text .col-sm-9').append(`<span class='help-block'>${I18n.t('errors.messages.blank')}</span>`)
   }
 }
