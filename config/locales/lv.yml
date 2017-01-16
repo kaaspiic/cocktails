@@ -1,11 +1,17 @@
 lv:
   no_write_permissions: Jums nav tiesību veikt šo darbību!
+  save: Saglabāt
+  add: Pievienot
   activerecord:
     models:
       user: Lietotājs
       drink: Recepte
-      comment: Komentārs
-      preparation_step: Pagatavošanas solis
+      comment:
+        one: Komentārs
+        other: Komentāri
+      preparation_step:
+        one: Pagatavošanas solis
+        other: Pagatavošanas soļi
       rating: Vērtējums
     attributes:
       user:
@@ -29,6 +35,7 @@ lv:
         updated_at: Labots
         ratings_count: Vērtējumu skaits
         rating: Vērtējums
+        picture: Attēls
       comment:
         drink_id: Dzēriens
         drink: Dzēriens
@@ -70,7 +77,9 @@ lv:
     ratings:
       post: Pievienot vērtējumu
       patch: Labot vērtējumu
-      average_rating: "%{count} vērtējumi, vidēji %{score}/5"
+      average_rating: "%{count} vērtējumi, vidēji %{score} / 5.0"
+    form:
+      remove: Dzēst
   dashboard:
     show:
       view_drink: Skatīt recepti
@@ -104,3 +113,9 @@ lv:
       3: Vidēji
       4: Labi
       5: Izcili!
+
+  breadcrumbs:
+    root: Sākums
+    drinks: Receptes
+    new_drink: Jauna recepte
+    edit_drink: Labot recepti

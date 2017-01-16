@@ -17,7 +17,8 @@ html
           ol.breadcrumb
             = yield :breadcrumbs
           .mdl-layout-spacer
-          = yield :actions
+          .toolbar-actions
+            = yield :actions
 
     . class="#{'main-container mdl-shadow--3dp' unless params[:action] == 'index'}"
       p.notice

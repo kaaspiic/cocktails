@@ -1,11 +1,57 @@
-= image_tag drink_picture_path(@drink.id), size: 400
+= provide :breadcrumbs
+  = link_breadcrumb t('breadcrumbs.root'), root_path
+  = link_breadcrumb t('breadcrumbs.drinks'), drinks_path
+  = head_breadcrumb @drink
 
 - if @drink.user == current_user
-  = link_to t('.destroy'), drink_path(@drink), method: :delete
-  = link_to t('.edit'), edit_drink_path(@drink)
+  = provide :actions
+    .btn-group
+      = link_to t('.destroy'), drink_path(@drink), method: :delete, class: 'btn btn-outline-primary'
+      = link_to t('.edit'), edit_drink_path(@drink), class: 'btn btn-outline-primary'
 
+.row
+  .col-sm-5
+    - if @drink.picture
+      = image_tag drink_picture_path(@drink.id), size: 400
+  .col-sm-7
+    .drink-ratings.pull-right.text-right
+      = render 'ratings', drink: @drink
+
+    dl.mt-5
+      dt= Drink.human_attribute_name(:name)
+      dd= @drink.name
+      dt= Drink.human_attribute_name(:ingredients)
+      dd= @drink.ingredients.join(', ')
+      dt= Drink.human_attribute_name(:strength)
+      dd= t('collections.strengths')[@drink.strength.to_i]
+      dt= Drink.human_attribute_name(:user_id)
+      dd= @drink.user
+      dt= Drink.human_attribute_name(:created_at)
+      dd= l(@drink.created_at)
+      dt= Drink.human_attribute_name(:description)
+      dd.text-justify= @drink.description
+
+- if @drink.preparation_steps.any?
+  hr
+  h4= PreparationStep.model_name.human(count: @drink.preparation_steps.count)
+  .card
+    .card-header
+      ul.nav.nav-tabs.card-header-tabs
+        - @drink.preparation_steps.each_with_index do |ps, i|
+          li.nav-item
+            a href="#id_#{ps.id}" data-toggle='tab' class="nav-link #{'active' if i.zero?}"
+              = "#{i + 1}. #{ps.title}"
+
+    .tab-content
+      - @drink.preparation_steps.each_with_index do |ps, i|
+        . id="id_#{ps.id}" class="tab-pane #{'active' if i.zero?}"
+          .card-block
+            = fa_icon('clock-o', class: 'mr-2 mb-3')
+            = "#{ps.time_needed} min"
+            .
+              = ps.description
+
+hr
 .drink-comments
   = render 'comments', drink: @drink
 
-.drink-ratings
-  = render 'ratings', drink: @drink

@@ -1,23 +1,26 @@
+h4= Comment.model_name.human(count: 2)
+
 - data = { remote: true, component: 'Comments', drink: drink.id }
 - drink.comments.order(:created_at).each do |comment|
-  .comment
-    strong= comment.user
-    - if comment.user == current_user
-      = link_to fa_icon(:trash), comment_path(comment), method: :delete, data: { action: 'delete', remote: true }
-      = link_to fa_icon(:pencil), '', data: { action: 'edit' }
-      = simple_form_for :comment, url: comment_path(comment), method: :patch, html: { hidden: true, data: data } do |f|
-        = f.input :text, as: :text, input_html: { value: comment.text }
-        = f.submit
+  .comment.card.mb-2
+    .card-block
+      strong= link_to comment.user, user_path(comment.user)
+      - if comment.user == current_user
+        .pull-right
+          = link_to fa_icon(:pencil, class: 'mr-2'), '', data: { action: 'edit' }
+          = simple_form_for :comment, url: comment_path(comment), method: :patch, html: { hidden: true, data: data } do |f|
+            = f.input :text, as: :text, input_html: { value: comment.text }
+            = f.submit t('save'), class: 'btn btn-outline-primary pull-right'
+          = link_to fa_icon(:trash), comment_path(comment), method: :delete, data: { action: 'delete', remote: true }
 
-    .comment-text
-      = comment
-    - if comment.created_at != comment.updated_at
-      .comment-edited
-        = t('.comment_edited')
+      .comment-text
+        = comment
+      - if comment.created_at != comment.updated_at
+        .comment-edited
+          = t('.comment_edited')
 
 - if current_user
-  hr
   = simple_form_for :comment, url: comments_path, method: :post, html: { data: data } do |f|
     = f.hidden_field :drink_id, value: drink.id
-    = f.input :text, as: :text
-    = f.submit
+    = f.input :text, as: :text, label: false
+    = f.submit t('add'), class: 'btn btn-outline-primary'

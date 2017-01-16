@@ -9,9 +9,9 @@ span.average-rating
 
   = simple_form_for :rating, form_params.merge(html: { data: { remote: true, component: 'DrinkRating', drink: drink.id } }) do |f|
     = f.hidden_field :drink_id, value: drink.id
-    = f.input :score, as: :score, value: drink.average_rating, translation_scope: 'collections.rating_scores'
+    = f.input :score, as: :score, value: drink.average_rating, translation_scope: 'collections.rating_scores', label: false
 
-    = f.submit t(".#{form_params[:method]}"), hidden: true
+    = f.submit t(".#{form_params[:method]}"), hidden: true, class: 'btn btn-outline-primary'
 - else
   = simple_form_for :rating, html: { data: { remote: true, component: 'DrinkRating', drink: drink.id } } do |f|
     = f.input :score, as: :score, value: drink.average_rating, translation_scope: 'collections.rating_scores'

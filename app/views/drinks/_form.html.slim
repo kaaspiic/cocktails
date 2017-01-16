@@ -1,19 +1,26 @@
 = simple_form_for drink, html: { data: { component: 'PreparationSteps' } } do |f|
-  = f.input :name
-  = f.file_field :picture
-  = f.input :ingredients, as: :select, input_html: { multiple: true, allowCreate: true, data: { component: 'Select2' } }, collection: ingredient_collection
-  = f.input :strength, as: :score, translation_scope: 'collections.strengths'
-  = f.input :description
+  = provide :actions
+    = f.submit_button params[:action]
 
-  span data-action='add'
-    | Add
+  .row
+    .col-sm-9
+      = f.input :name
+      = f.input :picture, as: :file
+      = f.input :ingredients, as: :select, input_html: { multiple: true, allowCreate: true, data: { component: 'Select2' } }, collection: ingredient_collection
+      = f.input :strength, as: :score, translation_scope: 'collections.strengths'
+      = f.input :description, as: :text
+
+  hr
+  .h4
+    = PreparationStep.model_name.human(count: 2)
+    = link_to fa_icon('plus-square'), '#', class: 'ml-3', data: { action: 'add' }
+
   = f.simple_fields_for :preparation_steps do |ff|
-    .drink-preparation-step
-      span data-action='remove'
-        | Remove
-      = ff.hidden_field :_destroy
-      = ff.input :title
-      = ff.input :description
-      = ff.input :time_needed
-
-  = f.submit
+    .drink-preparation-step.card.mb-3
+      .card-block
+        h5
+          = link_to "#{fa_icon('minus-square', class: 'mr-2') + t('.remove')}".html_safe, '#', class: 'ml-3', data: { action: 'remove' }
+        = ff.hidden_field :_destroy
+        = ff.input :title
+        = ff.input :description, as: :text
+        = ff.input :time_needed
