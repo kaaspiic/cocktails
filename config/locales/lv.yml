@@ -73,13 +73,14 @@ lv:
       average_rating: "%{count} vērtējumi, vidēji %{score}/5"
   dashboard:
     show:
-      all_drinks: Visi dzērieni
+      view_drink: Skatīt recepti
+      all_drinks: Visas receptes
   users:
     no_write_permissions: Jums nav tiesību labot šo lietotāju!
     update:
       incorrect_password: Profila iestatījumi netika atjaunoti, jo ievadītā parole nav pareiza!
       user_save_unsuccessful: Profila iestatījumi netika atjaunoti!
-      user_save_successful: Profila iestatījumi veiksmīgi atjaunoti!
+      user_save_successful: Profila iestatījumi veiksmīgi tika atjaunoti!
 
   datagrid:
     form:
@@ -95,8 +96,8 @@ lv:
       1: Bezalkoholisks - 1
       2: Vājš - 2
       3: Vidējs - 3
-      4: Spēcīgs - 4
-      5: Bifeļu gāzējs - 5
+      4: Stiprs - 4
+      5: Ļoti stiprs - 5
     rating_scores:
       1: Galīgi garām!
       2: Neiesaku

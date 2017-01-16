@@ -1,6 +1,6 @@
 .demo-card-square {
   width: 250px;
-  height: 400px;
+  height: 450px;
   padding: 10px;
   margin: 10px;
 }
@@ -24,6 +24,8 @@
   flex-wrap: wrap;
 }
 
-.mdl-card__title-text {
-  padding-bottom: 10px;
+.mdl-card__title.mdl-card--expand {
+  padding-top: 20px;
+  padding-bottom: 0px;
+  padding-left: 10px;
 }
