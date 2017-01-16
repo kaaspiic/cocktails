@@ -1,6 +1,9 @@
 .row.drinks-row
   - @drinks.each do |drink|
       .demo-card-square.mdl-card.mdl-shadow--2dp
+        - if drink.picture
+          .mdl-card__picture
+            = image_tag drink_picture_path(drink.id), size: 200
         .mdl-card__title.mdl-card--expand
           h2.mdl-card__title-text
             = drink.name.capitalize
@@ -8,5 +11,4 @@
         .mdl-card__supporting-text
           = drink.description
         .mdl-card__actions.mdl-card--border
-          a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect
-            | skatīt dzērienu
+          = link_to t('.view_drink'), drink_path(drink)
